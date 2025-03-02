@@ -9,7 +9,8 @@
     "dev:beets": "turbo dev --filter beets-frontend-v3",
     "dev:turbopack": "turbo dev:turbopack --filter frontend-v3",
     "dev:beets:turbopack": "turbo dev:turbopack --filter beets-frontend-v3",
-    "graphql:gen": "turbo graphql:gen",
+    "generate": "graphql-codegen",
+    "graphql:gen": "cross-env DOTENV_CONFIG_PATH=./.env.local pnpm exec graphql-codegen -r dotenv/config -c ./shared/services/api/codegen.ts",
     "lint:all": "turbo run lint format --continue",
     "lint:all:fix": "turbo run lint:fix format:fix --continue --force",
     "lint": "turbo lint",
@@ -28,7 +29,9 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
     "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
     "husky": "^9.1.2",
     "lint-staged": "^13.2.3",
     "prettier": "^3.2.5",
