@@ -17,6 +17,6 @@
     "frontend-v3": "workspace:*",
     "@repo/lib": "workspace:*",
     "beets-frontend-v3": "workspace:*",
-    "start-server-and-test": "2.0.9"
+    "start-server-and-test": "2.0.10"
   }
 }
